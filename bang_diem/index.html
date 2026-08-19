@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bang diem cua em</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="ex_3.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BANG DIEM CUA EM</h1>
+        <div id="input">
+            <span>Semester1:</span>
+            <input type="text" name="inputa" id="text_1" size="40px">
+        </div>
+        <div id="input">
+            <span>Semester2:</span>
+            <input type="text" name="inputa" id="text_2" size="40px">
+        </div>
+        <div id="input">
+            <div id="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <span>Year:</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <select style="width: 50px; color: red" id="select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-8">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input">
+            <div id="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <span>Summarise:</span>
+                    </div>
+                    <div class="col-sm-10">
+                        <input type="text" name="result" id="result" size="40" disabled="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input">
+            <div id="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p id="display"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="form-horizontal">
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-2">
+                    <input type="button" name="ok" id="ok" value="OK" onclick="myFunction1()">
+                </div>
+                <div class="col-sm-2">
+                    <input type="button" name="cancel" id="cancel" value="Cancel" onclick="myFunction2()">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

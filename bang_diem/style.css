@@ -1,0 +1,35 @@
+
+body{
+    background:#eaf0fb;
+    }
+.container{
+    background:#a9a9a9;
+    border:3px solid red;
+    max-width:600px;
+    margin-top:40px;
+    padding:25px 30px;
+    }
+h1{
+    text-align:center;
+    color:#1a5fd6;
+    font-size:28px;
+    }
+#input{
+    margin:12px 0;
+    }
+#input span{
+    display:inline-block;
+    width:100px;
+    }
+#result{
+    background:#e0e0e0;
+    }
+#display{
+    font-size:26px;
+    font-weight:bold;
+    margin-top:10px;
+    }
+input[type="button"]{
+    padding:6px 20px;
+    font-size:16px;
+    }
