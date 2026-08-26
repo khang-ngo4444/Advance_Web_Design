@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Fullname_Customer</h2>
+    <input type="text" id="name">
+
+    <h2>Id_Pro</h2>
+    <input type="text" id="id">
+
+    <h2>Name_Pro</h2>
+    <input type="text" id="prdname">
+
+    <h2>Quantity_Pro</h2>
+    <input type="text" id="qty">
+
+    <h2>Price_Pro</h2>
+    <input type="text" id="price">
+
+    <div class="buttons">
+        <input type="button" value="Save" onclick="save()">
+        <input type="button" value="Show" onclick="show()">
+        <input type="button" value="Reset" onclick="reset()">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Auto_Increment</th>
+                <th>Fullname_Customer</th>
+                <th>Id_Pro</th>
+                <th>Name_Pro</th>
+                <th>Quantity_Pro</th>
+                <th>Price_Pro</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
