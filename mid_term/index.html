@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie lab</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="topbar__logo">◉</span>
+    <nav class="topbar__nav">
+      <a href="#" class="topbar__link topbar__link--active">Trang Chủ</a>
+      <a href="#" class="topbar__link">Thể Loại</a>
+      <a href="#" class="topbar__link">Phim Mới</a>
+      <a href="#" class="topbar__link">Phim Hot</a>
+      <a href="#" class="topbar__link">Tài Khoản</a>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <section class="panel panel--form" aria-labelledby="form-title">
+      <h2 id="form-title">Thêm phim</h2>
+      <form id="movie-form" class="form-inline" novalidate>
+        <input type="hidden" id="field-id">
+
+        <label class="field">
+          <span>Tên phim</span>
+          <input type="text" id="field-name" required placeholder="VD: Biệt Đội Siêu Anh Hùng">
+        </label>
+
+        <label class="field">
+          <span>Ảnh</span>
+          <input type="url" id="field-image" placeholder="https://...">
+        </label>
+
+        <label class="field field--grow">
+          <span>Mô tả</span>
+          <input type="text" id="field-description" placeholder="Mô tả ngắn về phim">
+        </label>
+
+        <label class="field field--small">
+          <span>Thời lượng (phút)</span>
+          <input type="number" id="field-duration" min="0" step="1" required placeholder="0">
+        </label>
+
+        <label class="field field--small">
+          <span>Năm phát hành</span>
+          <input type="number" id="field-year" min="1900" step="1" required placeholder="2024">
+        </label>
+
+        <div class="field-actions">
+          <button type="submit" class="btn btn--primary" id="submit-btn">Thêm phim</button>
+          <button type="button" class="btn btn--ghost" id="cancel-edit-btn" hidden>Huỷ sửa</button>
+        </div>
+      </form>
+
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel panel--list" aria-labelledby="list-title">
+      <div class="panel__header">
+        <h2 id="list-title">Danh sách phim</h2>
+        <span class="count-pill" id="movie-count">0 phim</span>
+      </div>
+
+      <div id="movie-grid" class="movie-grid" aria-live="polite"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p>Chưa có phim nào.</p>
+        <p class="empty-state__hint">Thêm phim đầu tiên ở form phía trên.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <template id="movie-card-template">
+    <article class="movie-card">
+      <div class="movie-card__poster" data-action="show">
+        <img class="movie-card__image" src="" alt="">
+        <span class="movie-card__year"></span>
+      </div>
+      <div class="movie-card__body">
+        <h3 class="movie-card__name" data-action="show"></h3>
+        <p class="movie-card__meta"></p>
+        <p class="movie-card__desc"></p>
+        <div class="movie-card__actions">
+          <button type="button" class="btn btn--watch" data-action="show">Xem Ngay</button>
+          <button type="button" class="btn icon-btn--edit" data-action="edit">Sửa</button>
+          <button type="button" class="btn icon-btn--delete" data-action="delete">Xoá</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <div class="modal" id="detail-modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <button type="button" class="modal__close" data-close-modal aria-label="Đóng">×</button>
+      <img id="detail-image" src="" alt="">
+      <h3 id="detail-title"></h3>
+      <p id="detail-description" class="modal__description"></p>
+      <dl class="modal__meta">
+        <div><dt>Thời lượng</dt><dd id="detail-duration"></dd></div>
+        <div><dt>Năm</dt><dd id="detail-year"></dd></div>
+        <div><dt>Giá</dt><dd id="detail-price"></dd></div>
+        <div><dt>Mã phim</dt><dd id="detail-id"></dd></div>
+      </dl>
+    </div>
+  </div>
+
+</body>
+</html>
