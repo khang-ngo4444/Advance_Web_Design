@@ -1,0 +1,16 @@
+{
+  "name": "buoi_10",
+  "version": "1.0.0",
+  "scripts": {
+    "mongo": "node mongo/app.js",
+    "mysql": "node mysql/app.js",
+    "seed:mongo": "node mongo/seed.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.10.3",
+    "mysql2": "^3.24.5"
+  }
+}
