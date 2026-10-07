@@ -1,0 +1,18 @@
+<%- include('partials/head', { title: 'Edit Product' }) %>
+    <div class="page-head"><h1>Edit Product</h1></div>
+    <form action="/edit/<%= product._id %>" method="POST" enctype="multipart/form-data" class="form-page">
+      <div class="field"><label for="name">Name</label><input id="name" type="text" name="name" value="<%= product.name %>" required></div>
+      <div class="field"><label for="price">Price ($)</label><input id="price" type="number" name="price" value="<%= product.price %>" min="0" step="any" required></div>
+      <div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" name="quantity" value="<%= product.quantity %>" min="0" required></div>
+      <div class="field"><label for="imageUrl">Image URL</label><input id="imageUrl" type="text" name="imageUrl" value="<%= product.image %>"></div>
+      <div class="field">
+        <label for="image">Or upload a new image</label>
+        <input id="image" type="file" name="image" accept="image/*">
+        <img src="<%= product.image %>" alt="<%= product.name %>" class="current-image">
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="button button-solid">Update product</button>
+        <a href="/">Back to product list</a>
+      </div>
+    </form>
+<%- include('partials/foot') %>

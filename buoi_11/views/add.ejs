@@ -1,0 +1,14 @@
+<%- include('partials/head', { title: 'Add Product' }) %>
+    <div class="page-head"><h1>Add Product</h1></div>
+    <form action="/add" method="POST" enctype="multipart/form-data" class="form-page">
+      <div class="field"><label for="name">Name</label><input id="name" type="text" name="name" required></div>
+      <div class="field"><label for="price">Price ($)</label><input id="price" type="number" name="price" min="0" step="any" required></div>
+      <div class="field"><label for="quantity">Quantity</label><input id="quantity" type="number" name="quantity" min="0" required></div>
+      <div class="field"><label for="imageUrl">Image URL</label><input id="imageUrl" type="text" name="imageUrl" placeholder="https://..."></div>
+      <div class="field"><label for="image">Or upload an image</label><input id="image" type="file" name="image" accept="image/*"></div>
+      <div class="form-actions">
+        <button type="submit" class="button button-solid">Add product</button>
+        <a href="/">Back to product list</a>
+      </div>
+    </form>
+<%- include('partials/foot') %>
