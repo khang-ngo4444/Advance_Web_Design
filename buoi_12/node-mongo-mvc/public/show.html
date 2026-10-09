@@ -2,22 +2,21 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Danh sách sản phẩm</title>
-  <style>
-    table { border-collapse: collapse; width: 80%; margin: auto; }
-    td, th { border: 1px solid #aaa; padding: 8px; text-align: left; }
-    h1 { text-align: center; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <h1>Danh sách sản phẩm</h1>
 
-  <table>
-    <thead>
-      <tr><th>Tên</th><th>Giá</th><th>Danh mục</th><th>Tồn kho</th></tr>
-    </thead>
-    <tbody id="product-list"></tbody>
-  </table>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Tên</th><th class="num">Giá</th><th>Danh mục</th><th class="num">Tồn kho</th></tr>
+      </thead>
+      <tbody id="product-list"></tbody>
+    </table>
+  </div>
 
   <script>
     // Gọi API lấy danh sách sản phẩm rồi đổ vào bảng
@@ -27,9 +26,9 @@
         document.getElementById('product-list').innerHTML = products.map(p => `
           <tr>
             <td>${p.name}</td>
-            <td>${p.price.toLocaleString('vi-VN')} ₫</td>
-            <td>${p.category}</td>
-            <td>${p.stock}</td>
+            <td class="num">${p.price.toLocaleString('vi-VN')} ₫</td>
+            <td><span class="tag">${p.category}</span></td>
+            <td class="num">${p.stock}</td>
           </tr>`).join('');
       })
       .catch(err => console.error('Lỗi gọi API:', err));
