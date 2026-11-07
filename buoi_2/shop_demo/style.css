@@ -1,0 +1,21 @@
+.card-img-top {
+    height: 320px;
+    object-fit: cover;
+}
+
+.price-new {
+    color: #000000;
+    font-weight: 700;
+}
+
+.price-old {
+    color: #8a8a8a;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.btn {
+    background-color: #d0342c;
+    color: #fff;
+    border: none;
+}
