@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <form method="GET">
+    <select name="category">
+      <option value="">-- Tất cả loại --</option>
+      <% categories.forEach(c => { %>
+        <option value="<%= c._id %>"><%= c.name %></option>
+      <% }) %>
+    </select>
+
+    <select name="sort">
+      <option value="">-- Không sắp xếp --</option>
+      <option value="asc">Giá tăng dần</option>
+      <option value="desc">Giá giảm dần</option>
+    </select>
+
+    <input name="maxPrice" placeholder="Giá tối đa">
+    <button type="submit">Lọc</button>
+  </form>
+
+  <a href="/products/new">➕ Thêm sản phẩm</a>
+
+  <table>
+    <tr><th>Tên</th><th>Giá</th><th>Loại</th><th>Tồn kho</th><th>Hành động</th></tr>
+    <% products.forEach(p => { %>
+      <tr>
+        <td><a href="/products/<%= p._id %>"><%= p.name %></a></td>
+        <td><%= p.price %></td>
+        <td><%= p.categoryId ? p.categoryId.name : 'Không có' %></td>
+        <td><%= p.stock %></td>
+        <td>
+          <a href="/products/edit/<%= p._id %>">Sửa</a> |
+          <a href="/products/delete/<%= p._id %>" onclick="return confirm('Xóa sản phẩm này?')">Xóa</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <div>
+    <% for(let i=1; i<= totalPages; i++) { %>
+      <a href="?page=<%= i %>"><%= i %></a>
+    <% } %>
+  </div>
+</body>
+</html>

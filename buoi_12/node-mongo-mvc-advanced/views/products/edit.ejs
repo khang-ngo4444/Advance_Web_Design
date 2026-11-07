@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <form action="/products/edit/<%= product._id %>" method="POST">
+    <p>Tên: <input name="name" value="<%= product.name %>" required></p>
+    <p>Giá: <input type="number" name="price" value="<%= product.price %>" required></p>
+    <p>Tồn kho: <input type="number" name="stock" value="<%= product.stock %>"></p>
+    <p>Mô tả: <textarea name="description"><%= product.description %></textarea></p>
+    <p>Loại:
+      <select name="categoryId">
+        <% categories.forEach(c => { %>
+          <option value="<%= c._id %>" <%= String(c._id) === String(product.categoryId) ? 'selected' : '' %>><%= c.name %></option>
+        <% }) %>
+      </select>
+    </p>
+    <button type="submit">Cập nhật</button>
+    <a href="/products">Hủy</a>
+  </form>
+</body>
+</html>
